@@ -1,0 +1,19 @@
+class A{
+    int linear(int a[],int size,int key){
+        for(int i=0;i<size;i++){
+            if(a[i]==key){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void main(String args[]){
+       A obj=new A();
+       int a[]={12,54,78,23,68,9,56,23,90};
+       int result=obj.linear(a,a.length,99);
+       if(result!=-1)
+       System.out.println("Key found at index:"+result);
+       else
+       System.out.println("Key not found");
+    }
+}
