@@ -1,0 +1,34 @@
+class A{
+    int binary(int a[],int size,int key){
+        int start=0;
+        int end=size-1;
+        int mid=start+(end-start)/2;
+        //int mid=(start+end)/2;...not used
+        
+        while(start<=end)
+        {
+            if(a[mid]==key)
+            return mid;
+            
+            else if(a[mid]>key)
+            end=mid-1;
+            
+            else
+            start=mid+1;
+            
+            mid=start+(end-start)/2;//to omit error due to very large integer values adding up to be out of int limit
+            //mid=(start+end)/2;....not used
+        }
+        return -1;
+    }
+       
+    public static void main(String args[]){
+       A obj=new A();
+       int a[]={1,4,6,7,9,12,45,76,89};
+       int result=obj.binary(a,a.length,45);
+       if(result!=-1)
+       System.out.println("Key found at index:"+result);
+       else
+       System.out.println("Key not found");
+    }
+}
